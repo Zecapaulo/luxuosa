@@ -1,0 +1,402 @@
+      :root {
+          /* Cores extraídas da imagem */
+          --dark-bg: #0b0c10;
+          /* Um tom levemente mais profundo que o #121212 */
+          --light-bg: #c1b3e6;
+          --text-light: #ffffff;
+          --text-muted: #9ba0b4;
+          --btn-lilac: #d1c4f7;
+          --btn-dark: #1d1e26;
+          --grid-color: rgba(255, 255, 255, 0.04);
+      }
+
+      body,
+      html {
+          margin: 0;
+          padding: 0;
+          font-family: 'Inter', sans-serif;
+          overflow-x: hidden;
+      }
+
+      /* Layout Principal */
+      .split-layout {
+          display: flex;
+          min-height: 100vh;
+          flex-wrap: wrap;
+      }
+
+      .left-side {
+          background-color: var(--dark-bg);
+          /* Adicionado o radial-gradient na última camada para o efeito de brilho */
+          background-image:
+              linear-gradient(var(--grid-color) 1px, transparent 1px),
+              linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+              radial-gradient(circle at 15% 30%, rgba(193, 179, 230, 0.12) 0%, transparent 65%);
+          /* Especificando o tamanho para as 3 camadas: as duas do grid e a do gradiente radial */
+          background-size: 150px 150px, 150px 150px, 100% 100%;
+          background-position: center center;
+          flex: 1 1 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 5rem 6rem;
+          position: relative;
+      }
+
+      .right-side {
+          background-color: var(--light-bg);
+          flex: 1 1 50%;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          position: relative;
+      }
+
+      /* Navbar Absoluta */
+      .custom-navbar {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          padding: 2.5rem 6rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          z-index: 10;
+      }
+
+      .brand-logo {
+          width: 33%;
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+      }
+
+      .logo-img {
+          /* Define uma altura que preserva a estética original do texto */
+          height: 4rem;
+          width: auto;
+          /* Mantém a proporção da largura de 2550x589px */
+          max-width: 100%;
+          object-fit: contain;
+          position: absolute;
+      }
+
+      /* Ajuste para mobile para o logo não ficar pequeno demais */
+      @media (max-width: 991px) {
+          .logo-img {
+              height: 28px;
+          }
+      }
+
+      .nav-links {
+
+          display: flex;
+          gap: 2.5rem;
+          width: 33%;
+          justify-content: center;
+      }
+
+      .nav-links a {
+          color: var(--text-light);
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 0.95rem;
+          transition: opacity 0.3s ease;
+      }
+
+      .nav-links a:hover {
+          opacity: 0.7;
+      }
+
+      .nav-action {
+          width: 33%;
+          display: flex;
+          justify-content: flex-end;
+      }
+
+      /* Tipografia Hero */
+      .hero-title {
+          color: var(--text-light);
+          font-weight: 700;
+          font-size: 4.5rem;
+          line-height: 1.1;
+          margin-bottom: 1.5rem;
+          max-width: 600px;
+      }
+
+      .hero-subtitle {
+          color: var(--text-muted);
+          font-size: 1.05rem;
+          line-height: 1.6;
+          max-width: 480px;
+          margin-bottom: 3rem;
+      }
+
+      /* Botões */
+      .btn-pill {
+          border-radius: 50px;
+          padding: 0.6rem 0.6rem 0.6rem 1.5rem;
+          font-weight: 600;
+          display: inline-flex;
+          align-items: center;
+          gap: 1rem;
+          text-decoration: none;
+          transition: transform 0.2s ease;
+      }
+
+      .btn-pill:hover {
+          transform: scale(1.02);
+      }
+
+      .btn-shop {
+          background-color: var(--btn-lilac);
+          color: var(--btn-dark);
+      }
+
+      .btn-shop .icon-circle {
+          background-color: var(--btn-dark);
+          color: var(--text-light);
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+      }
+
+      .btn-get-started {
+          background-color: var(--btn-dark);
+          color: var(--text-light);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .btn-get-started .icon-circle {
+          background-color: var(--text-light);
+          color: var(--btn-dark);
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+      }
+
+      .btn-demo {
+          color: var(--text-light);
+          text-decoration: none;
+          font-weight: 500;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.8rem;
+      }
+
+      .btn-demo .play-circle {
+          background-color: var(--text-light);
+          color: var(--dark-bg);
+          width: 38px;
+          height: 38px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+          padding-left: 3px;
+          /* Centraliza visualmente o ícone de play */
+      }
+
+      .actions-wrapper {
+          display: flex;
+          align-items: center;
+          gap: 2.5rem;
+      }
+
+      /* Imagem do Produto */
+      .product-image {
+          width: 100%;
+          object-fit: contain;
+      }
+
+      /* Selo Circular (Explore Now) */
+      .explore-badge {
+          position: absolute;
+          bottom: 12%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 120px;
+          height: 120px;
+          background-color: var(--dark-bg);
+          border-radius: 50%;
+          z-index: 20;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .rotating-text {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          animation: rotate 12s linear infinite;
+      }
+
+      @keyframes rotate {
+          100% {
+              transform: rotate(360deg);
+          }
+      }
+
+      .explore-badge .arrow-down {
+          background-color: var(--btn-lilac);
+          color: var(--dark-bg);
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.2rem;
+          z-index: 2;
+      }
+
+      /* Responsividade */
+      @media (max-width: 991px) {
+          .split-layout {
+              flex-direction: column;
+          }
+
+          .left-side,
+          .right-side {
+              flex: 1 1 100%;
+              min-height: 50vh;
+              padding: 4rem 2rem;
+          }
+
+          .custom-navbar {
+              padding: 1.5rem 2rem;
+          }
+
+          .nav-links {
+              display: none;
+              /* Esconde links no mobile para simplificar */
+          }
+
+          .hero-title {
+              font-size: 3rem;
+          }
+
+          .explore-badge {
+              top: 50%;
+              bottom: auto;
+              transform: translate(-50%, -50%);
+          }
+
+          .product-image {
+              margin-top: 4rem;
+          }
+      }
+
+      /* =========================================
+   Seção de Produtos (Grid)
+   ========================================= */
+
+      .product-section {
+          background-color: var(--white-bg);
+          padding: 60px 0;
+      }
+
+      .product-card {
+          background-color: #f0f1f3;
+          /* Cinza claro da imagem original */
+          border-radius: 20px;
+          padding: 25px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          transition: all 0.3s ease;
+          border: 1px solid transparent;
+      }
+
+      .product-card:hover {
+          transform: translateY(-10px);
+          background-color: #ffffff;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      .star-icon {
+          font-size: 1.2rem;
+          color: #1d1e26;
+          cursor: pointer;
+          margin-bottom: 15px;
+      }
+
+      .product-img-wrapper {
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 20px 0;
+      }
+
+      .product-img-wrapper img {
+          max-width: 100%;
+          max-height: 250px;
+          object-fit: contain;
+      }
+
+      .product-info {
+          margin-top: 20px;
+      }
+
+      .product-name {
+          font-size: 1.4rem;
+          font-weight: 600;
+          color: #1d1e26;
+          margin-bottom: 30px;
+          /* Espaço maior como na imagem */
+      }
+
+      .product-code {
+          color: #666;
+          font-size: 0.85rem;
+          margin-bottom: 8px;
+      }
+
+      .product-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+
+      .product-price {
+          font-weight: 700;
+          font-size: 1.1rem;
+          color: #1d1e26;
+      }
+
+      .product-stock {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 0.9rem;
+          color: #1d1e26;
+      }
+
+      .stock-dot {
+          width: 12px;
+          height: 12px;
+          background-color: #34a853;
+          /* Verde indicador */
+          border-radius: 50%;
+      }
+
+      /* Ajuste Responsivo para Desktop */
+      @media (min-width: 1200px) {
+          .product-section .container-fluid {
+              padding-left: 100px !important;
+              padding-right: 100px !important;
+          }
+      }
