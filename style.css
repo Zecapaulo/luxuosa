@@ -388,7 +388,7 @@
       .stock-dot {
           width: 12px;
           height: 12px;
-          background-color: #34a853;
+          background-color: var(--btn-lilac);
           /* Verde indicador */
           border-radius: 50%;
       }
@@ -400,3 +400,284 @@
               padding-right: 100px !important;
           }
       }
+
+
+
+      /* Importando uma fonte serifada elegante similar à imagem */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
+.instagram-section {
+    background-color: #ffffff;
+    overflow: hidden; /* Evita scroll horizontal por causa das rotações */
+    padding-bottom: 100px !important;
+}
+
+.feed-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+}
+
+.instagram-wrapper {
+    padding-top: 40px;
+    perspective: 1000px; /* Adiciona profundidade leve */
+}
+
+/* Estilo Base dos Cards */
+.insta-card {
+    width: 345px;
+    height: 528px;
+    background-color: #eee;
+    border-radius: 15px; /* Bordas arredondadas suaves */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, z-index 0s;
+    margin: 0 -30px; /* Margem negativa para criar o overlap (sobreposição) */
+    position: relative;
+}
+
+.insta-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Efeito de Hover: Traz o card para frente e endireita */
+.insta-card:hover {
+    transform: rotate(0deg) scale(1.1) !important;
+    z-index: 10;
+}
+
+/* Rotações Individuais para imitar a colagem da imagem */
+.card-1 { 
+    transform: rotate(-15deg); 
+    z-index: 1;
+}
+
+.card-2 { 
+    transform: rotate(-5deg) translateY(-10px); 
+    z-index: 2;
+}
+
+.card-3 { 
+    transform: rotate(8deg) translateY(-30px); 
+    z-index: 3;
+}
+
+.card-4 { 
+    transform: rotate(-8deg) translateY(10px); 
+    z-index: 2;
+}
+
+.card-5 { 
+    transform: rotate(12deg); 
+    z-index: 1;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 991px) {
+    .instagram-wrapper {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .insta-card {
+        margin: 0;
+        transform: rotate(0deg) !important;
+        width: 45%;
+        height: 250px;
+    }
+}
+
+.footer-section {
+    background-color: var(--dark-bg);
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    /* Repetindo o padrão de grade da Hero para consistência */
+    background-image: 
+        linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 80px 80px;
+}
+
+.footer-brand {
+    letter-spacing: 2px;
+    font-size: 1.8rem;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.footer-divider {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.text-muted-dark {
+    color: var(--text-muted-dark);
+}
+
+.footer-legal a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+/* Ajuste para ícones das redes sociais */
+.footer-links i {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 991px) {
+    .footer-section {
+        background-size: 40px 40px; /* Grade menor em telas pequenas */
+    }
+
+    
+}
+:root {
+    --dark-bg: #121619; /* Cor principal do site fornecido */
+    --lavender: #c1b3e6; /* Cor de destaque para Luxuosa */
+}
+
+.designer-section {
+    background-color: var(--dark-bg);
+    position: relative;
+    /* Padrão de grade idêntico ao da Hero e Footer fornecidos */
+    background-image: 
+        linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 80px 80px;
+}
+
+.section-title {
+    font-size: 3.2rem;
+    letter-spacing: -1px;
+    line-height: 1.1;
+}
+
+.text-lavender {
+    color: var(--lavender);
+}
+
+.section-description {
+    font-size: 1rem;
+    max-width: 400px;
+    margin-left: auto;
+}
+
+/* Container de Vídeo */
+.video-content {
+    border-radius: 40px; /* Bordas arredondadas conforme image_6faacf.jpg */
+    overflow: hidden;
+    position: relative;
+    height: 550px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.video-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-info {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 5;
+}
+
+.logo-circle {
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+}
+
+/* Botão Play Glassmorphism */
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+.play-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Selo Circular Temático */
+.explore-badge-dark {
+    position: absolute;
+    top: 20%;
+    right: 15%;
+    width: 120px;
+    height: 120px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.badge-text {
+    font-size: 10px;
+    font-weight: bold;
+    fill: #000;
+    letter-spacing: 1px;
+}
+
+.badge-arrow {
+    position: absolute;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+/* Rotação contínua do texto do selo */
+.explore-badge-dark svg {
+    animation: rotateText 15s linear infinite;
+}
+
+@keyframes rotateText {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 991px) {
+    .section-title { font-size: 2.2rem; }
+    .video-content { height: 400px; }
+    .explore-badge-dark { top: -40px; right: 5%; }
+}
