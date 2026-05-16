@@ -1,414 +1,557 @@
-      :root {
-          /* Cores extraídas da imagem */
-          --dark-bg: #0b0c10;
-          /* Um tom levemente mais profundo que o #121212 */
-          --light-bg: #c1b3e6;
-          --text-light: #ffffff;
-          --text-muted: #9ba0b4;
-          --btn-lilac: #d1c4f7;
-          --btn-dark: #1d1e26;
-          --grid-color: rgba(255, 255, 255, 0.04);
-      }
+:root {
+    /* Cores extraídas da imagem original e do mockup mobile */
+    --dark-bg: #0b0c10;
+    --light-bg: #c1b3e6;
+    --app-bg: #eaddf8; /* Cor de fundo do mockup mobile */
+    --text-light: #ffffff;
+    --text-muted: #9ba0b4;
+    --btn-lilac: #d1c4f7;
+    --btn-dark: #1d1e26;
+    --grid-color: rgba(255, 255, 255, 0.04);
+}
 
-      body,
-      html {
-          margin: 0;
-          padding: 0;
-          font-family: 'Inter', sans-serif;
-          overflow-x: hidden;
-      }
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    background-color: var(--white-bg);
+}
 
-      /* Layout Principal */
-      .split-layout {
-          display: flex;
-          min-height: 100vh;
-          flex-wrap: wrap;
-      }
+/* Layout Principal */
+.split-layout {
+    display: flex;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    position: relative;
+}
 
-      .left-side {
-          background-color: var(--dark-bg);
-          /* Adicionado o radial-gradient na última camada para o efeito de brilho */
-          background-image:
-              linear-gradient(var(--grid-color) 1px, transparent 1px),
-              linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
-              radial-gradient(circle at 15% 30%, rgba(193, 179, 230, 0.12) 0%, transparent 65%);
-          /* Especificando o tamanho para as 3 camadas: as duas do grid e a do gradiente radial */
-          background-size: 150px 150px, 150px 150px, 100% 100%;
-          background-position: center center;
-          flex: 1 1 50%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          padding: 5rem 6rem;
-          position: relative;
-      }
+.left-side {
+    background-color: var(--dark-bg);
+    background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+        radial-gradient(circle at 15% 30%, rgba(193, 179, 230, 0.12) 0%, transparent 65%);
+    background-size: 150px 150px, 150px 150px, 100% 100%;
+    background-position: center center;
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 6rem;
+    position: relative;
+}
 
-      .right-side {
-          background-color: var(--light-bg);
-          flex: 1 1 50%;
-          display: flex;
-          align-items: flex-end;
-          justify-content: center;
-          position: relative;
-      }
+.right-side {
+    background-color: var(--light-bg);
+    flex: 1 1 50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+}
 
-      /* Navbar Absoluta */
-      .custom-navbar {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          padding: 2.5rem 6rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          z-index: 10;
-      }
+/* Navbar Absoluta */
+.custom-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2.5rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
 
-      .brand-logo {
-          width: 33%;
-          display: flex;
-          align-items: center;
-          text-decoration: none;
-      }
+.brand-logo {
+    width: 33%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
 
-      .logo-img {
-          /* Define uma altura que preserva a estética original do texto */
-          height: 4rem;
-          width: auto;
-          /* Mantém a proporção da largura de 2550x589px */
-          max-width: 100%;
-          object-fit: contain;
-          position: absolute;
-      }
+.logo-img {
+    height: 4rem;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    position: absolute;
+    filter: brightness(0) contrast(100%);
+}
 
-      /* Ajuste para mobile para o logo não ficar pequeno demais */
-      @media (max-width: 991px) {
-          .logo-img {
-              height: 28px;
-          }
-      }
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    width: 33%;
+    justify-content: center;
+}
 
-      .nav-links {
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: opacity 0.3s ease;
+}
 
-          display: flex;
-          gap: 2.5rem;
-          width: 33%;
-          justify-content: center;
-      }
+.nav-links a:hover {
+    opacity: 0.7;
+}
 
-      .nav-links a {
-          color: var(--text-light);
-          text-decoration: none;
-          font-weight: 500;
-          font-size: 0.95rem;
-          transition: opacity 0.3s ease;
-      }
+.nav-action {
+    width: 33%;
+    display: flex;
+    justify-content: flex-end;
+}
 
-      .nav-links a:hover {
-          opacity: 0.7;
-      }
+/* Tipografia Hero */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+/* Container Principal Mobile */
+.mobile-explore-section {
+    padding: 0.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
 
-      .nav-action {
-          width: 33%;
-          display: flex;
-          justify-content: flex-end;
-      }
+.mobile-explore-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.5px;
+}
 
-      /* Tipografia Hero */
-      .hero-title {
-          color: var(--text-light);
-          font-weight: 700;
-          font-size: 4.5rem;
-          line-height: 1.1;
-          margin-bottom: 1.5rem;
-          max-width: 600px;
-      }
+.mobile-explore-text {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #333;
+    margin-bottom: 2rem;
+    max-width: 95%;
+}
 
-      .hero-subtitle {
-          color: var(--text-muted);
-          font-size: 1.05rem;
-          line-height: 1.6;
-          max-width: 480px;
-          margin-bottom: 3rem;
-      }
+/* Alinhamento dos Botões e do Badge na mesma linha */
+.mobile-layout-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-      /* Botões */
-      .btn-pill {
-          border-radius: 50px;
-          padding: 0.6rem 0.6rem 0.6rem 1.5rem;
-          font-weight: 600;
-          display: inline-flex;
-          align-items: center;
-          gap: 1rem;
-          text-decoration: none;
-          transition: transform 0.2s ease;
-      }
+.mobile-btns-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
 
-      .btn-pill:hover {
-          transform: scale(1.02);
-      }
+/* Estilo dos Botões */
+.btn-mobile-v2 {
+text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
 
-      .btn-shop {
-          background-color: var(--btn-lilac);
-          color: var(--btn-dark);
-      }
+.btn-mobile-v2.solid {
+    background-color: #b3a2e2;
+    color: #1a1a1a;
+}
 
-      .btn-shop .icon-circle {
-          background-color: var(--btn-dark);
-          color: var(--text-light);
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 0.8rem;
-      }
+.btn-mobile-v2.light {
+    background-color: #cdc1f0; /* Tom mais suave para o segundo botão */
+    color: #1a1a1a;
+}
 
-      .btn-get-started {
-          background-color: var(--btn-dark);
-          color: var(--text-light);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-      }
+.btn-mobile-v2 .icon-dot {
+    background: #1a1a1a;
+    color: #fff;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+}
 
-      .btn-get-started .icon-circle {
-          background-color: var(--text-light);
-          color: var(--btn-dark);
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 0.8rem;
-      }
+/* Badge Circular Compacto */
+.mobile-mini-badge {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    flex-shrink: 0; /* Impede o badge de esmagar */
+}
 
-      .btn-demo {
-          color: var(--text-light);
-          text-decoration: none;
-          font-weight: 500;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.8rem;
-      }
+.rotate-anim {
+    width: 100%;
+    height: 100%;
+    animation: rotationLoop 12s linear infinite;
+}
 
-      .btn-demo .play-circle {
-          background-color: var(--text-light);
-          color: var(--dark-bg);
-          width: 38px;
-          height: 38px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 0.8rem;
-          padding-left: 3px;
-          /* Centraliza visualmente o ícone de play */
-      }
+@keyframes rotationLoop {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
 
-      .actions-wrapper {
-          display: flex;
-          align-items: center;
-          gap: 2.5rem;
-      }
+.badge-text-style {
+    fill: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
 
-      /* Imagem do Produto */
-      .product-image {
-          width: 100%;
-          object-fit: contain;
-      }
+.badge-center-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #b3a2e2;
+    color: #1a1a1a;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-light);
+    font-weight: 700;
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+}
 
-      /* Selo Circular (Explore Now) */
-      .explore-badge {
-          position: absolute;
-          bottom: 12%;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 120px;
-          height: 120px;
-          background-color: var(--dark-bg);
-          border-radius: 50%;
-          z-index: 20;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      }
+.hero-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 480px;
+    margin-bottom: 3rem;
+}
 
-      .rotating-text {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          animation: rotate 12s linear infinite;
-      }
+/* Botões */
+.btn-pill {
+    border-radius: 50px;
+    padding: 0.6rem 0.6rem 0.6rem 1.5rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
 
-      @keyframes rotate {
-          100% {
-              transform: rotate(360deg);
-          }
-      }
+.btn-pill:hover {
+    transform: scale(1.02);
+}
 
-      .explore-badge .arrow-down {
-          background-color: var(--btn-lilac);
-          color: var(--dark-bg);
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 1.2rem;
-          z-index: 2;
-      }
+.btn-shop {
+    background-color: var(--btn-lilac);
+    color: var(--btn-dark);
+}
 
-      /* Responsividade */
-      @media (max-width: 991px) {
-          .split-layout {
-              flex-direction: column;
-          }
+.btn-shop .icon-circle {
+    background-color: var(--btn-dark);
+    color: var(--text-light);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
 
-          .left-side,
-          .right-side {
-              flex: 1 1 100%;
-              min-height: 50vh;
-              padding: 4rem 2rem;
-          }
+.btn-get-started {
+    background-color: var(--btn-dark);
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-          .custom-navbar {
-              padding: 1.5rem 2rem;
-          }
+.btn-get-started .icon-circle {
+    background-color: var(--text-light);
+    color: var(--btn-dark);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
 
-          .nav-links {
-              display: none;
-              /* Esconde links no mobile para simplificar */
-          }
+.btn-demo {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+}
 
-          .hero-title {
-              font-size: 3rem;
-          }
+.btn-demo .play-circle {
+    background-color: var(--text-light);
+    color: var(--dark-bg);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    padding-left: 3px;
+}
 
-          .explore-badge {
-              top: 50%;
-              bottom: auto;
-              transform: translate(-50%, -50%);
-          }
+.actions-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
 
-          .product-image {
-              margin-top: 4rem;
-          }
-      }
+/* Imagem do Produto */
+.product-image {
+    width: 100%;
+    object-fit: contain;
+}
 
-      /* =========================================
+/* Selo Circular (Explore Now) */
+.explore-badge {
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
+    background-color: var(--dark-bg);
+    border-radius: 50%;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.rotating-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotate 12s linear infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.explore-badge .arrow-down {
+    background-color: var(--btn-lilac);
+    color: var(--dark-bg);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 2;
+}
+
+/* Configurações de Tipografia e Layout (Slider) */
+.featured-collection {
+    background: #ffffff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.featured-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 2.5rem;
+    letter-spacing: 6px;
+    margin-bottom: 50px;
+    color: #1a1a1a;
+}
+
+/* Container do Slider com Perspectiva */
+.featured-slider-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 40px 0;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.featured-card {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background: #f5f5f5;
+    transition: all 0.4s ease-in-out;
+    border: 4px solid #f5f5f5;
+}
+
+.featured-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilo dos Cards Laterais */
+.side-card-left-0, .side-card-right-0 { width: 200px; height: 450px; z-index: 3;  margin: 0 -20px; }
+.side-card-left-1, .side-card-right-1 { width: 160px; height: 385px; z-index: 2;  margin: 0 -30px; }
+.side-card-left-2, .side-card-right-2 { width: 155px; height: 330px; z-index: 1;  margin: 0 -40px; }
+
+/* Card Principal */
+.active-card {
+    width: 320px;
+    height: 520px;
+    z-index: 10;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+    transform: scale(1.02);
+}
+
+/* Badge NEW */
+.badge-new {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: #fff;
+    padding: 5px 15px;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Botão de Cadeado Centralizado */
+.btn-action-lock {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55px;
+    height: 55px;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* =========================================
    Seção de Produtos (Grid)
    ========================================= */
+.product-section {
+    background-color: var(--white-bg);
+    padding: 60px 0;
+}
 
-      .product-section {
-          background-color: var(--white-bg);
-          padding: 60px 0;
-      }
+.product-card {
+    background-color: #f0f1f3;
+    border-radius: 20px;
+    padding: 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
 
-      .product-card {
-          background-color: #f0f1f3;
-          /* Cinza claro da imagem original */
-          border-radius: 20px;
-          padding: 25px;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          transition: all 0.3s ease;
-          border: 1px solid transparent;
-      }
+.product-card:hover {
+    transform: translateY(-10px);
+    background-color: #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
 
-      .product-card:hover {
-          transform: translateY(-10px);
-          background-color: #ffffff;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-      }
+.star-icon {
+    font-size: 1.2rem;
+    color: #1d1e26;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
 
-      .star-icon {
-          font-size: 1.2rem;
-          color: #1d1e26;
-          cursor: pointer;
-          margin-bottom: 15px;
-      }
+.product-img-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
 
-      .product-img-wrapper {
-          flex-grow: 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 20px 0;
-      }
+.product-img-wrapper img {
+    max-width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+}
 
-      .product-img-wrapper img {
-          max-width: 100%;
-          max-height: 250px;
-          object-fit: contain;
-      }
+.product-info {
+    margin-top: 20px;
+}
 
-      .product-info {
-          margin-top: 20px;
-      }
+.product-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1d1e26;
+    margin-bottom: 30px;
+}
 
-      .product-name {
-          font-size: 1.4rem;
-          font-weight: 600;
-          color: #1d1e26;
-          margin-bottom: 30px;
-          /* Espaço maior como na imagem */
-      }
+.product-code {
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
 
-      .product-code {
-          color: #666;
-          font-size: 0.85rem;
-          margin-bottom: 8px;
-      }
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-      .product-footer {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-      }
+.product-price {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1d1e26;
+}
 
-      .product-price {
-          font-weight: 700;
-          font-size: 1.1rem;
-          color: #1d1e26;
-      }
+.product-stock {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #1d1e26;
+}
 
-      .product-stock {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 0.9rem;
-          color: #1d1e26;
-      }
+.stock-dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--btn-lilac);
+    border-radius: 50%;
+}
 
-      .stock-dot {
-          width: 12px;
-          height: 12px;
-          background-color: var(--btn-lilac);
-          /* Verde indicador */
-          border-radius: 50%;
-      }
-
-      /* Ajuste Responsivo para Desktop */
-      @media (min-width: 1200px) {
-          .product-section .container-fluid {
-              padding-left: 100px !important;
-              padding-right: 100px !important;
-          }
-      }
-
-
-
-      /* Importando uma fonte serifada elegante similar à imagem */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
-
+/* Instagram Section */
 .instagram-section {
     background-color: #ffffff;
-    overflow: hidden; /* Evita scroll horizontal por causa das rotações */
+    overflow: hidden;
     padding-bottom: 100px !important;
 }
 
@@ -422,19 +565,18 @@
 
 .instagram-wrapper {
     padding-top: 40px;
-    perspective: 1000px; /* Adiciona profundidade leve */
+    perspective: 1000px;
 }
 
-/* Estilo Base dos Cards */
 .insta-card {
     width: 345px;
     height: 528px;
     background-color: #eee;
-    border-radius: 15px; /* Bordas arredondadas suaves */
+    border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, z-index 0s;
-    margin: 0 -30px; /* Margem negativa para criar o overlap (sobreposição) */
+    margin: 0 -30px;
     position: relative;
 }
 
@@ -444,125 +586,103 @@
     object-fit: cover;
 }
 
-/* Efeito de Hover: Traz o card para frente e endireita */
 .insta-card:hover {
     transform: rotate(0deg) scale(1.1) !important;
     z-index: 10;
 }
 
-/* Rotações Individuais para imitar a colagem da imagem */
-.card-1 { 
-    transform: rotate(-15deg); 
-    z-index: 1;
-}
+.card-1 { transform: rotate(-15deg); z-index: 1; }
+.card-2 { transform: rotate(-5deg) translateY(-10px); z-index: 2; }
+.card-3 { transform: rotate(8deg) translateY(-30px); z-index: 3; }
+.card-4 { transform: rotate(-8deg) translateY(10px); z-index: 2; }
+.card-5 { transform: rotate(12deg); z-index: 1; }
 
-.card-2 { 
-    transform: rotate(-5deg) translateY(-10px); 
-    z-index: 2;
-}
-
-.card-3 { 
-    transform: rotate(8deg) translateY(-30px); 
-    z-index: 3;
-}
-
-.card-4 { 
-    transform: rotate(-8deg) translateY(10px); 
-    z-index: 2;
-}
-
-.card-5 { 
-    transform: rotate(12deg); 
-    z-index: 1;
-}
-
-/* Responsividade para dispositivos móveis */
-@media (max-width: 991px) {
-    .instagram-wrapper {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    
-    .insta-card {
-        margin: 0;
-        transform: rotate(0deg) !important;
-        width: 45%;
-        height: 250px;
-    }
-}
-
-.footer-section {
+/* Custom Footer */
+.custom-footer-container {
     background-color: var(--dark-bg);
-    position: relative;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    /* Repetindo o padrão de grade da Hero para consistência */
-    background-image: 
-        linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-    background-size: 80px 80px;
+    padding: 60px 0;
+    font-family: 'Inter', sans-serif;
 }
 
-.footer-brand {
-    letter-spacing: 2px;
-    font-size: 1.8rem;
+.footer-floating-card {
+    background-color: #ffffff;
+    border-radius: 50px;
+    padding: 60px 80px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
 
-.footer-links li {
-    margin-bottom: 12px;
+.footer-card-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #000000;
+    margin-bottom: 25px;
 }
 
-.footer-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 0.95rem;
+.footer-inline-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
-.footer-links a:hover {
-    color: #ffffff;
-}
-
-.footer-divider {
-    border-color: rgba(255, 255, 255, 0.08);
-}
-
-.text-muted-dark {
-    color: var(--text-muted-dark);
-}
-
-.footer-legal a {
-    color: #ffffff;
+.footer-inline-links a {
+    color: #666;
     text-decoration: none;
     font-size: 0.9rem;
-    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-.footer-legal a:hover {
-    text-decoration: underline;
+.footer-inline-links a:hover {
+    color: var(--btn-lilac);
 }
 
-/* Ajuste para ícones das redes sociais */
-.footer-links i {
-    font-size: 1.1rem;
+.footer-card-logo {
+    margin-bottom: 30px;
 }
 
-@media (max-width: 991px) {
-    .footer-section {
-        background-size: 40px 40px; /* Grade menor em telas pequenas */
-    }
-
-    
-}
-:root {
-    --dark-bg: #121619; /* Cor principal do site fornecido */
-    --lavender: #c1b3e6; /* Cor de destaque para Luxuosa */
+.footer-logo-img {
+    height: 60px;
+    filter: brightness(0);
 }
 
+.footer-social-circles {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-social-circles a {
+    width: 38px;
+    height: 38px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.footer-social-circles a:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.footer-copyright-alt,
+.footer-privacy-alt a {
+    font-size: 0.85rem;
+    color: #aaa;
+    text-decoration: none;
+}
+
+/* Designer Section */
 .designer-section {
-    background-color: var(--dark-bg);
     position: relative;
-    /* Padrão de grade idêntico ao da Hero e Footer fornecidos */
-    background-image: 
+    background-image:
         linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
     background-size: 80px 80px;
@@ -575,7 +695,8 @@
 }
 
 .text-lavender {
-    color: var(--lavender);
+    color: var(--btn-lilac);
+    font-family: 'Playfair Display', serif;
 }
 
 .section-description {
@@ -584,9 +705,8 @@
     margin-left: auto;
 }
 
-/* Container de Vídeo */
 .video-content {
-    border-radius: 40px; /* Bordas arredondadas conforme image_6faacf.jpg */
+    border-radius: 40px;
     overflow: hidden;
     position: relative;
     height: 550px;
@@ -609,11 +729,10 @@
 .logo-circle {
     width: 24px;
     height: 24px;
-    background: white;
+    background: rgb(0, 0, 0);
     border-radius: 50%;
 }
 
-/* Botão Play Glassmorphism */
 .play-btn {
     position: absolute;
     top: 50%;
@@ -638,14 +757,13 @@
     background: rgba(255, 255, 255, 0.25);
 }
 
-/* Selo Circular Temático */
 .explore-badge-dark {
     position: absolute;
     top: 20%;
     right: 15%;
     width: 120px;
     height: 120px;
-    background: #ffffff;
+    background: #000000;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -656,28 +774,561 @@
 .badge-text {
     font-size: 10px;
     font-weight: bold;
-    fill: #000;
+    fill: #ffffff;
     letter-spacing: 1px;
 }
 
 .badge-arrow {
     position: absolute;
     font-size: 1.5rem;
-    color: #000;
+    color: #ffffff;
 }
 
-/* Rotação contínua do texto do selo */
 .explore-badge-dark svg {
     animation: rotateText 15s linear infinite;
 }
 
-@keyframes rotateText {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+.profile {
+    background: #f0f1f3;
+    border-radius: 50px;
 }
 
-@media (max-width: 991px) {
-    .section-title { font-size: 2.2rem; }
-    .video-content { height: 400px; }
-    .explore-badge-dark { top: -40px; right: 5%; }
+.titulo {
+    padding: 40px 0 20px;
+}
+
+.titulo h5 {
+    color: #666;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ========================================================================= */
+/* RESPONSIVIDADE TABLET                                                     */
+/* ========================================================================= */
+
+@media (max-width: 991px) and (min-width: 769px) {
+    .split-layout {
+        flex-direction: column;
+    }
+    .left-side, .right-side {
+        flex: none;
+        width: 100%;
+        padding: 4rem 3rem;
+    }
+    .product-section .container-fluid {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+}
+
+/* ========================================================================= */
+/* MOBILE (<= 768px) — Recriação fiel ao mockup do app Luxuosa              */
+/* ========================================================================= */
+@media (max-width: 768px) {
+
+    /* ---------- NAVBAR estilo aplicativo ---------- */
+    .custom-navbar {
+        position: relative;
+        padding: 1rem 1.25rem 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+    }
+
+    /* Botão "voltar" via pseudo no navbar */
+    .custom-navbar::before {
+        content: "\2190"; /* ← */
+        order: 1;
+        font-size: 1.5rem;
+        color: var(--btn-dark);
+        font-weight: 600;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex: none;
+    }
+
+    .brand-logo {
+        width: auto;
+        order: 2;
+        flex: 1;
+        justify-content: center;
+        position: relative;
+    }
+
+    .logo-img {
+        position: relative;
+        height: 1.9rem;
+    }
+
+    .nav-links {
+        display: none !important;
+    }
+
+    .nav-action {
+        width: auto;
+        order: 3;
+        flex: none;
+    }
+
+    /* Botão "menu" circular no canto direito */
+    .btn-get-started {
+        order: 3;
+        background-color: transparent !important;
+        border: 1.5px solid var(--btn-dark) !important;
+        color: var(--btn-dark) !important;
+        width: 40px;
+        height: 40px;
+        padding: 0 !important;
+        border-radius: 50%;
+        font-size: 0;
+        position: relative;
+        flex: none;
+        gap: 0;
+    }
+
+    .btn-get-started::before {
+        content: "\22EF"; /* ⋯ */
+        font-size: 1.4rem;
+        color: var(--btn-dark);
+        line-height: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -55%);
+        font-weight: 700;
+    }
+
+    .btn-get-started > *,
+    .btn-get-started .icon-circle {
+        display: none !important;
+    }
+
+    /* ---------- HERO: Card escuro arredondado ---------- */
+    .split-layout {
+        padding: 0 1rem;
+        display: block;
+        min-height: auto;
+        flex-wrap: nowrap;
+    }
+
+    .left-side {
+     background: linear-gradient(to right, 
+        #0a0a0a 0%,    /* Quase preto na extremidade esquerda */
+        #1a1428 20%,   /* Roxo muito escuro profundo */
+        #4b3b6b 60%,   /* Roxo intermediário */
+        #8e7fb8 100%   /* Lilás claro/médio na extremidade direita */
+    );
+        border-radius: 26px;
+        padding: 0;
+        margin: 0 0 1.25rem 0;
+        text-align: left;
+        box-shadow: 0 18px 40px rgba(20, 10, 40, 0.18);
+        overflow: hidden;
+        position: relative;
+        min-height: 210px;
+        width: 100%;
+        flex: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* Tag superior "Herança e Identidade" */
+    .hero-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.4rem;
+        line-height: 1.19;
+        margin: 0;
+        padding: 1.5rem 1.5rem 0;
+        color: var(--text-light);
+        max-width: 70%;
+        text-transform: uppercase;
+        font-weight: 700;
+        position: relative;
+        z-index: 3;
+    }
+
+    .hero-title::before {
+        content: "Herança e Identidade";
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.90rem;
+        font-weight: 500;
+        text-transform: none;
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 1rem;
+        letter-spacing: 0.3px;
+    }
+
+    /* Subtítulo escondido dentro do card (vai para baixo via .titulo) */
+    .hero-subtitle {
+        display: none;
+    }
+
+    /* Lado direito: imagem luxc.png ocupando metade direita do card */
+    .right-side {
+              background: transparent;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        right: 16px;
+        bottom: 0;
+        width: 74%;
+        height: 100%;
+        display: block;
+        flex: none;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .product-image {
+        content: url('luxc.png');
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        max-height: none;
+        object-fit: cover;
+        object-position: bottom right;
+    }
+
+    /* Botões circulares (coroa + sacola) na base do card, à esquerda */
+    .actions-wrapper {
+        position: relative;
+        z-index: 4;
+        flex-direction: row;
+        gap: 0.6rem;
+        align-items: center;
+        padding: 0 1.5rem 1.5rem;
+        margin: auto 0 0 0;
+    }
+
+    .actions-wrapper .btn-pill,
+    .actions-wrapper .btn-demo {
+        width: 40px;
+        height: 40px;
+        padding: 0 !important;
+        border-radius: 50%;
+        background-color: var(--btn-lilac) !important;
+        color: var(--btn-dark) !important;
+        justify-content: center;
+        align-items: center;
+        font-size: 0;
+        position: relative;
+        overflow: hidden;
+        gap: 0;
+        border: none !important;
+        display: inline-flex;
+    }
+
+    .actions-wrapper .btn-pill > *,
+    .actions-wrapper .btn-demo > *,
+    .actions-wrapper .btn-pill .icon-circle,
+    .actions-wrapper .btn-demo .play-circle {
+        display: none !important;
+    }
+
+    .actions-wrapper .btn-shop::before {
+        content: "\f521"; /* fa-crown */
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 1.05rem;
+        color: var(--btn-dark);
+    }
+
+    .actions-wrapper .btn-demo::before {
+        content: "\f290"; /* fa-bag-shopping */
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 1.05rem;
+        color: var(--btn-dark);
+    }
+
+    /* Esconde o selo rotativo do hero */
+    .explore-badge {
+        display: none;
+    }
+    /* --- Estilização da Coleção de Inverno dentro do Media Query --- */
+
+.featured-collection {
+    padding: 0px 0 2px;
+    overflow: hidden; /* Garante que as fotos laterais não criem scroll horizontal */
+    background-color: #fff;
+}
+
+/* Ajuste dos textos */
+.featured-collection .feed-title {
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.featured-collection .titulo h5 {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    padding: 0 20px;
+    color: #666;
+}
+
+.featured-collection .titulo h5 br {
+    display: none; /* Remove a quebra de linha forçada no mobile */
+}
+
+/* Container do Slider */
+.featured-slider-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 400px; /* Altura controlada para o mobile */
+    perspective: 1000px;
+}
+
+/* Configuração Geral dos Cards no Mobile */
+.featured-card {
+    position: absolute; /* Sobrepõe os cards para criar o efeito da imagem */
+    transition: all 0.4s ease;
+    border-radius: 15px;
+    border: 2px solid #f5f5f5;
+}
+
+/* Card Central (Ativo) */
+.active-card {
+    position: relative; /* Mantém o espaço central */
+    width: 200px !important;
+    height: 320px !important;
+    z-index: 10;
+    transform: scale(1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Cards Imediatamente ao lado (0) */
+.side-card-left-0 {
+    display: block !important;
+    width: 160px !important;
+    height: 260px !important;
+    z-index: 5;
+    transform: translateX(-80px) scale(0.9); /* Puxa para trás do central */
+    opacity: 0.8;
+}
+
+.side-card-right-0 {
+    display: block !important;
+    width: 160px !important;
+    height: 260px !important;
+    z-index: 5;
+    transform: translateX(80px) scale(0.9); /* Puxa para trás do central */
+    opacity: 0.8;
+}
+
+/* Cards das extremidades (1) - Diminuídos para caber na tela */
+.side-card-left-1 {
+    display: block !important;
+    width: 130px !important;
+    height: 220px !important;
+    z-index: 2;
+    transform: translateX(-140px) scale(0.8);
+    opacity: 0.5;
+}
+
+.side-card-right-1 {
+    display: block !important;
+    width: 130px !important;
+    height: 220px !important;
+    z-index: 2;
+    transform: translateX(140px) scale(0.8);
+    opacity: 0.5;
+}
+
+/* Esconder os cards (2) no mobile para não poluir visualmente */
+.side-card-left-2, .side-card-right-2 {
+    display: none !important;
+}
+
+/* Badge "Novo" */
+.badge-new {
+    top: 15px;
+    left: 15px;
+    padding: 3px 10px;
+    font-size: 9px;
+}
+
+/* Botão de Cadeado */
+.btn-action-lock {
+    width: 44px;
+    height: 44px;
+    bottom: -22px; /* Metade para fora do card */
+    font-size: 1rem;
+    z-index: 20;
+     top: 21rem;
+}
+.mobile-hiden{
+    display: none;
+}
+.titulo {
+    padding: 0px 20px 20px;
+}
+/* 1. Remove o esmagamento lateral do container no mobile */
+    .product-section .container-fluid {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        padding-top: 25px !important;
+        padding-bottom: 25px !important;
+    }
+
+    /* Ajuste dos títulos da secção */
+    .product-section .titulo h5 {
+        font-size: 0.95rem;
+        padding: 0 15px;
+        line-height: 1.4;
+    }
+    .product-section .titulo h5 br {
+        display: none; /* Remove quebras de linha longas no telemóvel */
+    }
+
+    /* 2. Força a exibição perfeita em 2 colunas (Grelha 2x2) */
+    .product-section .row {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important; /* Espaçamento elegante entre os cards */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Reseta as margens padrões das colunas do Bootstrap */
+    .product-section .col {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* 3. Estilização Estética e Premium dos Cards de Produto */
+    .product-card {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 10px;
+        box-shadow: 0 4px 16px rgba(26, 20, 40, 0.06); /* Sombra suave roxa/escura */
+        border: 1px solid rgba(26, 20, 40, 0.04);
+        display: flex;
+        flex-direction: column;
+        height: 100%; /* Garante que todos os cards tenham a mesma altura */
+        position: relative;
+        transition: transform 0.2s ease;
+    }
+
+    /* Contentor da Imagem Quadrado Perfeito */
+    .product-img-wrapper {
+        background-color: #f8f7fa; /* Fundo neutro suave atrás da peça */
+        border-radius: 12px;
+        overflow: hidden;
+        aspect-ratio: 1 / 1; /* Mantém a imagem sempre quadrada estilo e-commerce moderno */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .product-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Faz a foto preencher o quadrado sem distorcer */
+    }
+
+    /* Posicionamento do Ícone de Estrela */
+    .product-card .star-icon {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        z-index: 5;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(4px);
+        padding: 6px;
+        border-radius: 50%;
+        font-size: 0.8rem;
+        color: #1a1428;
+    }
+
+    /* Informações do Produto */
+    .product-info {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 0 4px;
+    }
+
+    .product-name {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #1a1428;
+        margin-bottom: 2px;
+        line-height: 1.2;
+    }
+
+    .product-code {
+        font-size: 10px;
+        color: #8e8a99;
+        margin-bottom: 10px;
+    }
+
+    /* Rodapé do Card (Preço e Stock) */
+    .product-footer {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        margin-top: auto; /* Empurra os valores sempre para o fundo do card */
+    }
+
+    .product-price {
+        font-size: 12px;
+        font-weight: 800;
+        color: #1a1428;
+    }
+
+    .product-stock {
+        font-size: 8px;
+        color: #5c5866;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .stock-dot {
+        width: 6px;
+        height: 6px;
+        background-color: #2ec4b6; /* Ponto verde/turquesa vibrante para disponível */
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    /* Ajuste do botão inferior "Explorar mais Chapéus" */
+    .product-section .actions-wrapper {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .product-img-wrapper {
+    padding: 0px 0;
+}
+}
+/* ---------- Telas muito pequenas ---------- */
+@media (max-width: 380px) {
+    .hero-title {
+        font-size: 1.45rem;
+        max-width: 60%;
+    }
+
+    .left-side { min-height: 380px; }
+
+    .product-img-wrapper img { max-height: 95px; }
+
+    .product-name { font-size: 0.85rem; }
+
+    .featured-title { font-size: 1.35rem; }
 }
