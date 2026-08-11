@@ -1078,7 +1078,7 @@ html {
         display: none;
     }
 
-    /* Lado direito: imagem luxc.png ocupando metade direita do card */
+    /* Lado direito: imagem luxc.webp ocupando metade direita do card */
     .right-side {
         background: transparent;
         padding: 0;
@@ -1095,7 +1095,7 @@ html {
     }
 
     .product-image {
-        content: url('luxc.png');
+        content: url('luxc.webp');
         position: absolute;
         bottom: 0;
         right: 0;
