@@ -1,6 +1,0 @@
-# Permite que todos os robôs de busca explorem todo o site
-User-agent: *
-Allow: /
-
-# Localização do Mapa do Site
-Sitemap: https://luxuosa.co.mz/sitemap.xml
