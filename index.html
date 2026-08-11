@@ -4,7 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxuosa</title>
+    <title>Luxuosa - Chapéus Africanos Exclusivos</title>
+
+    <!-- SEO Básico -->
+    <meta name="description"
+        content="Descubra a Luxuosa, uma coleção exclusiva de chapéus africanos e vestidos de luxo. Peças artesanais desenhadas e feitas à mão em Matola, Moçambique, por Atalia Sitoé.">
+    <meta name="keywords"
+        content="chapéus africanos, fascinadores, turbantes, moda luxo Moçambique, vestidos de luxo, chapéus artesanais, Atalia Sitoé, Matola">
+    <meta name="author" content="Atalia Sitoé">
+    <link rel="canonical" href="https://luxuosa.co.mz/">
+
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://luxuosa.co.mz/">
+    <meta property="og:title" content="Luxuosa - Chapéus Africanos Exclusivos">
+    <meta property="og:description"
+        content="Celebre a sua identidade com a nossa coleção exclusiva de chapéus africanos. Cuidadosamente desenhada e feita à mão em Moçambique.">
+    <meta property="og:image" content="https://luxuosa.co.mz/luxuosa.png">
+    <meta property="og:site_name" content="Luxuosa">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luxuosa - Chapéus Africanos Exclusivos">
+    <meta name="twitter:description" content="Coleção exclusiva de chapéus africanos feitos à mão em Moçambique.">
+    <meta name="twitter:image" content="https://luxuosa.co.mz/luxuosa.png">
+
+    <!-- Estilos e Fontes -->
     <link href="bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,45 +39,47 @@
 
 <body>
 
+    <!-- Navegação -->
     <nav class="custom-navbar">
         <a href="index.html" class="brand-logo">
-            <img src="logo.png" alt="Beauty Logo" class="logo-img">
+            <img src="logo.png" alt="Luxuosa Logo" class="logo-img">
         </a>
 
         <div class="nav-links">
             <a href="produtos.html">Loja online</a>
-            <a href="#">Coleções</a>
-            <a href="#">A Nossa História</a>
+            <a href="#colecoes">Coleções</a>
+            <a href="#historia">A Nossa História</a>
             <a href="#footer">Contactos</a>
         </div>
 
         <div class="nav-action">
-            <a href="#" class="btn-pill btn-get-started btn">
+            <a href="https://wa.me/258873929605" target="_blank" rel="noopener noreferrer"
+                class="btn-pill btn-get-started btn">
                 Fale Conosco
                 <span class="icon-circle"><i class="fa-brands fa-whatsapp"></i></span>
             </a>
         </div>
     </nav>
 
+    <!-- Hero Section / Apresentação -->
     <div class="split-layout">
 
         <div class="left-side">
             <h1 class="hero-title text-uppercase">cada mulher merece uma coroa única.</h1>
             <p class="hero-subtitle">
                 Celebre a sua identidade com a nossa coleção exclusiva de chapéus africanos. Cuidadosamente desenhada e
-                feita à mão em
-                Moçambique, cada peça é uma obra de arte que une tradição, luxo e a essência da nossa cultura para
-                realçar a sua beleza
-                única.
+                feita à mão em Moçambique, cada peça é uma obra de arte que une tradição, luxo e a essência da nossa
+                cultura para
+                realçar a sua beleza única.
             </p>
 
             <div class="actions-wrapper">
-                <a href="#" class="btn-pill btn-shop">
+                <a href="#colecoes" class="btn-pill btn-shop">
                     Ver Coleções
                     <span class="icon-circle"><i class="fa-solid fa-chevron-right"></i></span>
                 </a>
 
-                <a href="#" class="btn-demo">
+                <a href="#historia" class="btn-demo">
                     <span class="play-circle"><i class="fa-solid fa-play"></i></span>
                     Conhecer a Arte
                 </a>
@@ -60,7 +87,7 @@
         </div>
 
         <div class="right-side">
-            <img src="image.png" alt="Curology Products" class="product-image">
+            <img src="image.png" alt="Produtos Luxuosa" class="product-image">
         </div>
 
         <div class="explore-badge">
@@ -79,6 +106,8 @@
         </div>
 
     </div>
+
+    <!-- Seção Mobile Explore -->
     <section class="mobile-explore-section d-md-none">
         <h2 class="mobile-explore-title">Explore a Nossa Coleção</h2>
         <p class="mobile-explore-text">
@@ -88,11 +117,11 @@
 
         <div class="mobile-layout-footer">
             <div class="mobile-btns-group">
-                <a href="#" class="btn-mobile-v2 solid">
+                <a href="#colecoes" class="btn-mobile-v2 solid">
                     Ver Coleções
                     <span class="icon-dot"><i class="fa-solid fa-chevron-right"></i></span>
                 </a>
-                <a href="#" class="btn-mobile-v2 light">
+                <a href="#historia" class="btn-mobile-v2 light">
                     Conhecer a Arte
                 </a>
             </div>
@@ -113,11 +142,12 @@
             </div>
         </div>
     </section>
-    <section class="featured-collection">
+
+    <!-- Seção de Coleção em Destaque -->
+    <section class="featured-collection" id="colecoes">
         <div class="container-fluid">
             <div class="titulo text-center mobile-hiden">
-                <h2 class="feed-title">Coleção Soberana
-                </h2>
+                <h2 class="feed-title">Coleção Soberana</h2>
                 <h5>Conheça a visão criativa por trás da nossa coleção 'Luxuosa' de chapéus <br> artesanais. Uma jornada
                     de estilo e sofisticação.</h5>
             </div>
@@ -135,13 +165,13 @@
 
                 <div class="featured-card active-card">
                     <span class="badge-new">Novo</span>
-
                     <img src="luxuosa.png" alt="Main Model">
-
                 </div>
-                <button class="btn-action-lock">
+
+                <button class="btn-action-lock" aria-label="Ação bloqueada">
                     <i class="fa-solid fa-lock"></i>
                 </button>
+
                 <div class="featured-card side-card-right-0">
                     <img src="col'3.png" alt="Model">
                 </div>
@@ -154,7 +184,9 @@
             </div>
         </div>
     </section>
-    <section class="product-section container">
+
+    <!-- Seção de Produtos -->
+    <section class="product-section container" id="produtos">
         <div class="titulo text-center">
             <h2 class="feed-title">As Nossas Peças</h2>
             <h5>Cada chapéu é feito à mão com amor e dedicação em Matola, Moçambique. <br>
@@ -187,7 +219,9 @@
 
                 <div class="col">
                     <div class="product-card">
-                        <i class="fa-regular fa-star star-icon"></i>
+                        <div class="card-header-actions">
+                            <i class="fa-regular fa-star star-icon"></i>
+                        </div>
                         <div class="product-img-wrapper">
                             <img src="prod2.png" alt="Prata Nobre">
                         </div>
@@ -206,7 +240,9 @@
 
                 <div class="col">
                     <div class="product-card">
-                        <i class="fa-regular fa-star star-icon"></i>
+                        <div class="card-header-actions">
+                            <i class="fa-regular fa-star star-icon"></i>
+                        </div>
                         <div class="product-img-wrapper">
                             <img src="prod3.png" alt="Fascinador Azul Oceano">
                         </div>
@@ -214,7 +250,7 @@
                             <h3 class="product-name">Oceano Azul</h3>
                             <p class="product-code">M24737</p>
                             <div class="product-footer">
-                                <span class="product-price">2300,00 MT</span>
+                                <span class="product-price">2.300,00 MT</span>
                                 <span class="product-stock">
                                     <span class="stock-dot"></span> 2 disponíveis
                                 </span>
@@ -225,7 +261,9 @@
 
                 <div class="col">
                     <div class="product-card">
-                        <i class="fa-regular fa-star star-icon"></i>
+                        <div class="card-header-actions">
+                            <i class="fa-regular fa-star star-icon"></i>
+                        </div>
                         <div class="product-img-wrapper">
                             <img src="prod4.png" alt="Fascinador Verde Esmeralda">
                         </div>
@@ -233,7 +271,7 @@
                             <h3 class="product-name">Pérola Dourada</h3>
                             <p class="product-code">M24739</p>
                             <div class="product-footer">
-                                <span class="product-price">2000,00 MT</span>
+                                <span class="product-price">2.000,00 MT</span>
                                 <span class="product-stock">
                                     <span class="stock-dot"></span> 1 disponível
                                 </span>
@@ -260,7 +298,7 @@
                             <h3 class="product-name">Amarelo Canário</h3>
                             <p class="product-code">M24728</p>
                             <div class="product-footer">
-                                <span class="product-price">2500,00 MT</span>
+                                <span class="product-price">2.500,00 MT</span>
                                 <span class="product-stock">
                                     <span class="stock-dot"></span> 1 disponível
                                 </span>
@@ -271,7 +309,9 @@
 
                 <div class="col">
                     <div class="product-card">
-                        <i class="fa-regular fa-star star-icon"></i>
+                        <div class="card-header-actions">
+                            <i class="fa-regular fa-star star-icon"></i>
+                        </div>
                         <div class="product-img-wrapper">
                             <img src="prod6.png" alt="Turbante Azul Royal">
                         </div>
@@ -279,7 +319,7 @@
                             <h3 class="product-name">Azul Royal</h3>
                             <p class="product-code">M24736</p>
                             <div class="product-footer">
-                                <span class="product-price">1000,00 MT</span>
+                                <span class="product-price">1.000,00 MT</span>
                                 <span class="product-stock">
                                     <span class="stock-dot"></span> 1 disponível
                                 </span>
@@ -290,7 +330,9 @@
 
                 <div class="col">
                     <div class="product-card">
-                        <i class="fa-regular fa-star star-icon"></i>
+                        <div class="card-header-actions">
+                            <i class="fa-regular fa-star star-icon"></i>
+                        </div>
                         <div class="product-img-wrapper">
                             <img src="prod7.png" alt="Chapéu Rosa Elegance">
                         </div>
@@ -298,7 +340,7 @@
                             <h3 class="product-name">Velvet Rose</h3>
                             <p class="product-code">M24737</p>
                             <div class="product-footer">
-                                <span class="product-price">2000,00 MT</span>
+                                <span class="product-price">2.000,00 MT</span>
                                 <span class="product-stock">
                                     <span class="stock-dot"></span> 2 disponíveis
                                 </span>
@@ -309,7 +351,9 @@
 
                 <div class="col">
                     <div class="product-card">
-                        <i class="fa-regular fa-star star-icon"></i>
+                        <div class="card-header-actions">
+                            <i class="fa-regular fa-star star-icon"></i>
+                        </div>
                         <div class="product-img-wrapper">
                             <img src="prod8.png" alt="Turbante Ouro Imperial">
                         </div>
@@ -328,6 +372,7 @@
 
             </div>
         </div>
+
         <div class="col-12 d-flex justify-content-center">
             <a href="produtos.html" class="btn-pill btn-shop d-inline-flex align-items-center text-decoration-none"
                 style="background-color: #1d1e26; color: #ffffff;">
@@ -338,15 +383,16 @@
                     <i class="fa-solid fa-chevron-right"></i>
                 </span>
             </a>
-
         </div>
     </section>
-    <section class="designer-section py-5">
+
+    <!-- Seção da Designer / História -->
+    <section class="designer-section py-5" id="historia">
         <div class="container py-5 position-relative profile">
 
             <div class="row mb-5 align-items-end">
                 <div class="col-lg-7">
-                    <h2 class="section-title  fw-bold">CONHEÇA A DESIGNER <br>POR TRÁS DA <span
+                    <h2 class="section-title fw-bold">CONHEÇA A DESIGNER <br>POR TRÁS DA <span
                             class="text-lavender">LUXUOSA</span></h2>
                 </div>
                 <div class="col-lg-5 text-lg-end">
@@ -365,11 +411,10 @@
                         <div class="logo-circle me-2 mr-4"></div>
                         <span class="text-white small opacity-75">Atalia Sitoé</span>
                     </div>
-                    <form action="https://www.facebook.com/reel/1643329623398474">
-                        <button type="submit" class="play-btn">
-                            <i class="fa-solid fa-play"></i>
-                        </button>
-                    </form>
+                    <a href="https://www.facebook.com/reel/1643329623398474" target="_blank" rel="noopener noreferrer"
+                        class="play-btn d-flex align-items-center justify-content-center text-decoration-none">
+                        <i class="fa-solid fa-play"></i>
+                    </a>
                 </div>
 
                 <div class="explore-badge-dark">
@@ -389,8 +434,7 @@
         </div>
     </section>
 
-
-
+    <!-- Rodapé -->
     <footer class="custom-footer-container" id="footer">
         <div class="container">
             <div class="footer-floating-card">
@@ -399,9 +443,11 @@
                     <div class="col-lg-4 mb-4 mb-lg-0">
                         <h6 class="footer-card-title">AJUDA & INFORMAÇÃO</h6>
                         <div class="footer-inline-links">
-                            <a href="#">Suporte</a>
-                            <a href="#">Encomendas</a>
-                            <a href="#">Entregas em Moçambique</a>
+                            <a href="https://wa.me/258873929605?text=Olá,%20preciso%20de%20suporte."
+                                target="_blank">Suporte</a>
+                            <a href="https://wa.me/258873929605?text=Olá,%20gostaria%20de%20fazer%20uma%20encomenda."
+                                target="_blank">Encomendas</a>
+                            <a href="produtos.html">Entregas em Moçambique</a>
                         </div>
                         <div class="footer-copyright-alt">
                             Atalia Sitoe Luxuosa © 2026
@@ -413,8 +459,10 @@
                             <img src="logo.png" alt="Atalia Sitoe Luxuosa Logo" class="footer-logo-img">
                         </div>
                         <div class="footer-social-circles">
-                            <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/reel/1643329623398474" target="_blank" title="Facebook"><i
+                                    class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/ataliasitoeluxuosa" target="_blank" title="Instagram"><i
+                                    class="fa-brands fa-instagram"></i></a>
                             <a href="https://www.tiktok.com/@ataliasitoeluxuosa" target="_blank" title="TikTok">
                                 <i class="fa-brands fa-tiktok"></i>
                             </a>
@@ -433,14 +481,16 @@
                             <p class="mb-1"><i class="fa-solid fa-phone"></i> +258 87 392 9605</p>
                         </div>
                         <div class="footer-inline-links justify-content-lg-end">
-                            <a href="#">Sobre a Atalia</a>
-                            <a href="#">Políticas de Privacidade</a>
+                            <a href="#historia">Sobre a Atalia</a>
+                            <a href="https://wa.me/258873929605?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20Políticas%20de%20Privacidade."
+                                target="_blank">Políticas de Privacidade</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
